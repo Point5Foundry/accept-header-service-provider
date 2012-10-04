@@ -1,5 +1,7 @@
 # Accept Header Service Provider
 
+[![Build Status](https://secure.travis-ci.org/Point5Foundry/accept-header-service-provider.png)](http://travis-ci.org/Point5Foundry/accept-header-service-provider)
+
 This serivce provider enables you to easily filter routes based on accept headers in Silex.
 
 To use it, simply do the following:
