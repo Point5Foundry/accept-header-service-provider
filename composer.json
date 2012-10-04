@@ -1,7 +1,6 @@
 {
     "name":"pff/accept-header-service-provider",
     "description":"A service provider to help enable accept header filtering for routes",
-    "version": "master",
     "require": {
         "silex/silex": "1.0.*"
     },
