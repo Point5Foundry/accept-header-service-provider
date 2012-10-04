@@ -21,13 +21,7 @@ class AcceptHeaderRoutingTest extends WebTestCase
     {
         $app = new \Silex\Application();
 
-        $app['route_class'] = '\\Pff\\Provider\\AcceptHeaderProvider\\Route';
-
-        $app['dispatcher']->addSubscriber(new AcceptHeader\KernelListener());
-
-        $app['url_matcher'] = $app->share(function () use ($app) {
-            return new AcceptHeader\UrlMatcher($app['routes'], $app['request_context'], $app['request']);
-        });
+	$app->register(new AcceptHeader\AcceptHeaderServiceProvider());
 
 
         /** @var $controllers1 VersionedRestControllerCollection */
