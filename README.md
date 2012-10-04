@@ -4,6 +4,7 @@ This serivce provider enables you to easily filter routes based on accept header
 
 To use it, simply do the following:
 
+```php
     <?php
 
     use Pff\ServiceProvider\AcceptHeaderServiceProvider\AcceptHeaderServiceProvider;
@@ -28,7 +29,7 @@ To use it, simply do the following:
 
         return new Response($cont, 200, array('Content-Type' => $accept_header));
     })->accept(array('application/ven.test.v2+json', 'application/ven.test.v2+xml'));
-
+```
 
 Now a request with accept headers including `application/ven.test.v1+json` and `application/ven.test.v1+xml`
 will be handled by the first route, and requests with accept headers including `application/ven.test.v2+json` and
