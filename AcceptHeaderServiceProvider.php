@@ -11,7 +11,10 @@ class AcceptHeaderServiceProvider implements ServiceProviderInterface
     {
         $app['route_class'] = '\\Pff\\ServiceProvider\\AcceptHeaderServiceProvider\\Route';
 
-        $app['dispatcher']->addSubscriber(new KernelListener());
+        $app['dispatcher'] = $app->extend('dispatcher', function($dispatcher) {
+            $dispatcher->addSubscriber(new KernelListener());
+            return $dispatcher;
+        });
 
         $app['url_matcher'] = $app->share(function () use ($app) {
             return new UrlMatcher($app['routes'], $app['request_context'], $app['request']);
