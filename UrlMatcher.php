@@ -11,9 +11,8 @@ class UrlMatcher extends RedirectableUrlMatcher
 {
     private $request;
 
-    public function __construct(RouteCollection $routes, RequestContext $context, Request $request)
+    public function setRequest(Request $request)
     {
-        parent::__construct($routes, $context);
         $this->request = $request;
     }
 
