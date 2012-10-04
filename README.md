@@ -1,6 +1,6 @@
 # Accept Header Service Provider
 
-This serivce provider enables you to easily filter routes based on accept headers.
+This serivce provider enables you to easily filter routes based on accept headers in Silex.
 
 To use it, simply do the following:
 
@@ -33,3 +33,4 @@ To use it, simply do the following:
 Now a request with accept headers including `application/ven.test.v1+json` and `application/ven.test.v1+xml`
 will be handled by the first route, and requests with accept headers including `application/ven.test.v2+json` and
 `application/ven.test.v2+xml` will be routed to the second.
+
