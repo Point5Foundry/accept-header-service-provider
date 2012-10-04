@@ -1,0 +1,14 @@
+{
+    "require": {
+        "silex/silex": "1.0.*",
+        "symfony/browser-kit": "*"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-0": { "Pff\\Provider\\AcceptHeaderProvider": "" }
+    },
+    "target-dir": "Pff/Provider/AcceptHeaderProvider",
+    "minimum-stability": "dev"
+}
