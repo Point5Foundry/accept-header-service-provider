@@ -4,7 +4,7 @@ namespace Pff\ServiceProvider\AcceptHeaderServiceProvider;
 
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\RequestContext;
-use Symfony\Component\Routing\Route;
+use Symfony\Component\Routing\Route as BaseRoute;
 use Symfony\Component\HttpFoundation\Request;
 use Silex\RedirectableUrlMatcher;
 
@@ -21,7 +21,7 @@ class UrlMatcher extends RedirectableUrlMatcher
     /**
      * {@inheritDoc}
      */
-    protected function handleRouteRequirements($pathinfo, $name, Route $route)
+    protected function handleRouteRequirements($pathinfo, $name, BaseRoute $route)
     {
         $ret = parent::handleRouteRequirements($pathinfo, $name, $route);
         if ($ret[0] == self::REQUIREMENT_MISMATCH)

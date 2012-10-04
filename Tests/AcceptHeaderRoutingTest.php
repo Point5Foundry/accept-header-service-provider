@@ -88,7 +88,7 @@ class RoutingTest extends WebTestCase
         $this->assertEquals('{"content":"hello"}', $result, 'response is correct');
     }
 
-    public function testValidV2Call()
+    public function testValidV2XMLCall()
     {
         $client = $this->createClient();
 
@@ -99,6 +99,19 @@ class RoutingTest extends WebTestCase
         $result = $client->getResponse()->getContent();
 
         $this->assertEquals('<content>hiya</content>', $result, 'response is correct');
+    }
+
+    public function testValidV2JSONCall()
+    {
+        $client = $this->createClient();
+
+        $crawler = $client->request('GET', '/test', array(), array(), array('HTTP_ACCEPT' => 'application/ven.test.v2+json'));
+
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+
+        $result = $client->getResponse()->getContent();
+
+        $this->assertEquals('{"content":"hiya"}', $result, 'response is correct');
     }
 
     /**
