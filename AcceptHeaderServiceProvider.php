@@ -1,6 +1,6 @@
 <?php
 
-namespace Pff\Provider\AcceptHeaderProvider;
+namespace Pff\ServiceProvider\AcceptHeaderServiceProvider;
 
 use Silex\Application;
 use Silex\ServiceProviderInterface;
@@ -9,7 +9,7 @@ class AcceptHeaderServiceProvider implements ServiceProviderInterface
 {
     public function register(Application $app)
     {
-        $app['route_class'] = '\\Pff\\Provider\\AcceptHeaderProvider\\Route';
+        $app['route_class'] = '\\Pff\\ServiceProvider\\AcceptHeaderServiceProvider\\Route';
 
         $app['dispatcher']->addSubscriber(new KernelListener());
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Pff\Provider\AcceptHeaderProvider;
+namespace Pff\ServiceProvider\AcceptHeaderServiceProvider;
 
 use Silex\Route as SilexRoute;
 

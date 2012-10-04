@@ -1,6 +1,6 @@
 <?php
 
-namespace Pff\Provider\AcceptHeaderProvider;
+namespace Pff\ServiceProvider\AcceptHeaderServiceProvider;
 
 use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
 use Symfony\Component\HttpKernel\HttpKernelInterface;

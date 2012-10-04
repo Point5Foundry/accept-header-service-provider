@@ -1,5 +1,7 @@
 <?php
 
+namespace Pff\ServiceProvider\AcceptHeaderServiceProvider\Tests;
+
 use Silex\WebTestCase;
 use Symfony\Component\HttpKernel\HttpKernel;
 use Silex\Controller;
@@ -8,9 +10,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpKernel\KernelEvents;
 use Silex\RedirectableUrlMatcher;
-use Pff\Provider\AcceptHeaderProvider as AcceptHeader;
+use Pff\ServiceProvider\AcceptHeaderServiceProvider as AcceptHeader;
 
-class AcceptHeaderRoutingTest extends WebTestCase
+class RoutingTest extends WebTestCase
 {
     /**
      * Creates the application.

@@ -1,14 +1,19 @@
 {
+    "name":"pff/accept-header-service-provider",
+    "description":"A service provider to help enable accept header filtering for routes",
+    "version": "master",
     "require": {
-        "silex/silex": "1.0.*",
+        "silex/silex": "1.0.*"
+    },
+    "require-dev": {
         "symfony/browser-kit": "*"
     },
     "config": {
         "bin-dir": "bin"
     },
     "autoload": {
-        "psr-0": { "Pff\\Provider\\AcceptHeaderProvider": "" }
+        "psr-0": { "Pff\\ServiceProvider\\AcceptHeaderServiceProvider": "" }
     },
-    "target-dir": "Pff/Provider/AcceptHeaderProvider",
+    "target-dir": "Pff/ServiceProvider/AcceptHeaderServiceProvider",
     "minimum-stability": "dev"
 }
