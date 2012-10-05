@@ -38,6 +38,10 @@ class SingleControllerRoutingTest extends WebTestCase
             return new Response($cont, 200, array('Content-Type' => $accept_header));
         })->accept(array('application/ven.test.v1+json', 'application/ven.test.v1+xml'));
 
+        $controllers1->get('/other-test', function() use ($app) {
+            return new Response('response', 200);
+        });
+
 
         $app->mount('/', $controllers1);
 
@@ -72,6 +76,19 @@ class SingleControllerRoutingTest extends WebTestCase
         $result = $client->getResponse()->getContent();
 
         $this->assertEquals('{"content":"hello"}', $result, 'response is correct');
+    }
+
+    public function testValidNonAcceptCall()
+    {
+        $client = $this->createClient();
+        $crawler = $client->request('GET', '/other-test');
+
+        $this->assertEquals(200, $client->getResponse()->getStatusCode());
+
+        $expected = 'response';
+        $actual = $client->getResponse()->getContent();
+
+        $this->assertEquals($expected, $actual, 'basic response is correct');
     }
 
     /**

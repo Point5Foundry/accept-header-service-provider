@@ -36,6 +36,11 @@ class UrlMatcher extends RedirectableUrlMatcher
             }
         }
 
-        return array(self::REQUIREMENT_MISMATCH, null);
+        if ($route->getRequirement('_accept') != null)
+        {
+            return array(self::REQUIREMENT_MISMATCH, null);
+        }
+
+        return array(self::REQUIREMENT_MATCH, null);
     }
 }
