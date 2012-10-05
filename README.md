@@ -4,6 +4,10 @@
 
 This serivce provider enables you to easily filter routes based on accept headers in Silex.
 
+To install, require the package through composer (or install it any other way you care to...)
+
+    "pff/accept-header-service-provider": "dev-master"
+
 To use it, simply do the following:
 
 ```php
