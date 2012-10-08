@@ -27,7 +27,7 @@ class UrlMatcher extends RedirectableUrlMatcher
         if ($ret[0] == self::REQUIREMENT_MISMATCH)
             return $ret;
 
-        foreach($this->request->request->get('_accept') as $accept)
+        foreach($this->request->request->get('_accept', array()) as $accept)
         {
             if (preg_match('/^('.$route->getRequirement('_accept').')$/', $accept))
             {
