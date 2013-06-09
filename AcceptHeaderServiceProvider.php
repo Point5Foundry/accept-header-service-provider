@@ -13,7 +13,7 @@ class AcceptHeaderServiceProvider implements ServiceProviderInterface
 
         $app['url_matcher'] = $app->share(function () use ($app) {
             $matcher =  new UrlMatcher($app['routes'], $app['request_context']);
-            $matcher->setRequest($app['request']);
+            $matcher->setApplication($app);
 
             return $matcher;
         });
