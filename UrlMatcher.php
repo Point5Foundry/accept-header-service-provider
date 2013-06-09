@@ -5,16 +5,16 @@ namespace Pff\ServiceProvider\AcceptHeaderServiceProvider;
 use Symfony\Component\Routing\RouteCollection;
 use Symfony\Component\Routing\RequestContext;
 use Symfony\Component\Routing\Route as BaseRoute;
-use Symfony\Component\HttpFoundation\Request;
+use Silex\Application;
 use Silex\RedirectableUrlMatcher;
 
 class UrlMatcher extends RedirectableUrlMatcher
 {
-    private $request;
+    private $app;
 
-    public function setRequest(Request $request)
+    public function setApplication(Application $app)
     {
-        $this->request = $request;
+        $this->app = $app;
     }
 
 
@@ -27,7 +27,7 @@ class UrlMatcher extends RedirectableUrlMatcher
         if ($ret[0] == self::REQUIREMENT_MISMATCH)
             return $ret;
 
-        foreach($this->request->request->get('_accept', array()) as $accept)
+        foreach($this->app['request']->request->get('_accept', array()) as $accept)
         {
             if (preg_match('/^('.$route->getRequirement('_accept').')$/', $accept))
             {
